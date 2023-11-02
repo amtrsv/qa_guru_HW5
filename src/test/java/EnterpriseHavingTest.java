@@ -1,6 +1,4 @@
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -9,14 +7,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class EnterpriseHavingTest {
 
-    @BeforeAll
-    static void beforeAll() {
-        //Configuration.holdBrowserOpen = true;
-        //Configuration.baseUrl = "https://github.com/";
-        //Configuration.pageLoadStrategy = "eager";
-        Configuration.timeout = 5000; // секунды
-
-    }
 
     @Test
     void findSolutionEnteprise() {
@@ -27,7 +17,7 @@ public class EnterpriseHavingTest {
 
         //Убедитесь что загрузилась нужная страница (например что заголовок - "Build like the best."
         $("[href='/enterprise']").click();
-        $("#js-global-screen-reader-notice").shouldHave(text("The AI Powered Developer Platform"));
+        $("#hero-section-brand-heading").shouldHave(text("The AI-powered developer platform"));
     }
 
     @AfterAll
